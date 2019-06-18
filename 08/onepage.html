@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>One Page</title>
+    <link rel="stylesheet" href="onepage.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>어디까지 가 봤니?</h1>
+            <nav>
+                <a href="#eu" class="nav-btn">유럽</a>
+                <a href="#us" class="nav-btn">미국</a>
+                <a href="#ch" class="nav-btn">중국</a>
+                <a href="#jp" class="nav-btn">일본</a>
+            </nav>
+        </header>
+
+        <section class="page1" id="eu">
+            <h2>Europe</h2>
+        </section>
+        <section class="page2" id="us">
+            <h2>United States</h2>
+        </section>
+        <section class="page3" id="ch">
+            <h2>China</h2>
+        </section>
+        <section class="page4" id="jp">
+            <h2>Japan</h2>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script>
+        $(function () {
+            $('nav a').click(function (e) {
+                $.scrollTo(this.hash || 0, 500)
+                e.preventDefault()
+            })
+        })
+    </script>
+</body>
+
+</html>
