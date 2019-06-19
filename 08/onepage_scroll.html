@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="onepage.css">
     <script src="jquery-2.2.4.min.js"></script>
     <script src="jquery.onepage-scroll.js"></script>
+    <script src="jquery.smint.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -19,8 +21,15 @@
             });
         });
     </script>
+
+    <script>
+        $('#container').smint({
+            'scrollSpeed': 1000
+        });
+    </script>
 </head>
-<body>   
+
+<body>
     <div id="container">
         <header class="header">
             <h1>어디까지 가 봤니?</h1>
@@ -60,4 +69,5 @@
         })
     </script>
 </body>
+
 </html>
