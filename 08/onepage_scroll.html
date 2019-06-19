@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="onepage-scroll.css">
+    <link rel="stylesheet" href="onepage.css">
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="jquery.onepage-scroll.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".main").onepage_scroll({
+                sectionContainer: "section",
+                responsiveFallback: 600,
+                loop: true
+            });
+        });
+    </script>
+</head>
+<body>   
+    <div id="container">
+        <header class="header">
+            <h1>어디까지 가 봤니?</h1>
+            <div class="subMenu">
+                <nav id="navTop">
+                    <a href="#eu" class="nav-btn">유럽</a>
+                    <a href="#us" class="nav-btn">미국</a>
+                    <a href="#ch" class="nav-btn">중국</a>
+                    <a href="#jp" class="nav-btn">일본</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div class="main">
+        <section class="page1 eu" id="eu">
+            <h2>Europe</h2>
+        </section>
+        <section class="page2 us" id="us">
+            <h2>United States</h2>
+        </section>
+        <section class="page3 ch" id="ch">
+            <h2>China</h2>
+        </section>
+        <section class="page4 jp" id="jp">
+            <h2>Japan</h2>
+        </section>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+
+    <script>
+        $(function () {
+            $('nav a').click(function (e) {
+                $.scrollTo(this.hash || 0, 500)
+                e.preventDefault()
+            })
+        })
+    </script>
+</body>
+</html>
