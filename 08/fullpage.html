@@ -9,7 +9,7 @@
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css">
-    
+
 </head>
 
 <body>
@@ -24,11 +24,11 @@
             <a href="http://www.easyspub.com" class="navbar-brand"><img src="images/logo.png" alt="이지스퍼블리싱 로고"></a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#1stBook">된다! 맥북&아이맥</a></li>
-                <li><a href="#2ndBook">웹사이트 기획</a></li>
-                <li><a href="#3rdBook">R 데이터 분석</a></li>
-                <li><a href="#videoList">동영상 목록</a></li>
+            <ul class="nav navbar-nav" id="topMenu">
+                <li data-menuanchor="1stBook"><a href="#1stBook">된다! 맥북&아이맥</a></li>
+                <li data-menuanchor="2ndBook"><a href="#2ndBook">웹사이트 기획</a></li>
+                <li data-menuanchor="3rdBook"><a href="#3rdBook">R 데이터 분석</a></li>
+                <li data-menuanchor="videoList"><a href="#videoList">동영상 목록</a></li>
             </ul>
         </div>
     </nav>
@@ -155,13 +155,16 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="jquery-2.2.4.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <script src="jquery.fullpage.js"></script>
         <script>
-            $(document).ready(function() {
-                $("#fullpage").fullpage()
+            $(document).ready(function () {
+                $("#fullpage").fullpage({
+                    anchors: ["1stBook", "2ndBook", "3rdBook", "videoList"],
+                    menu: "#topMenu"
+                })
             })
         </script>
 </body>
