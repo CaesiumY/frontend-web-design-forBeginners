@@ -11,7 +11,7 @@
 
 <body>
     <div id="wrap">
-        <div class="container" id="ms1">
+        <div class="container bg-holder" id="ms1" data-width="1200" data-height="730">
             <section class="content">
                 <h3>It's been o'clock</h3>
                 <p>더치커피와 원두커피 전문 쇼핑몰 빈어클락입니다.
@@ -19,7 +19,7 @@
                 </p>
             </section>
         </div>
-        <div class="container" id="ms2">
+        <div class="container bg-holder" id="ms2" data-width="1200" data-height="730">
             <section class="content">
                 <h3>Cold brew coffee</h3>
                 <p> 믿을 수 있는 고품질의 더치커피를 찾으신다면 <br>
@@ -28,7 +28,7 @@
                 </p>
             </section>
         </div>
-        <div class="container" id="ms3">
+        <div class="container bg-holder" id="ms3" data-width="1200" data-height="730">
             <section class="content">
                 <h3>Roasted bean</h3>
                 <p>주문 후 로스팅한 신선한 원두를 <br>
@@ -39,8 +39,23 @@
         </div>
     </div>
     <script src="jquery-2.2.4.min.js"></script>
+    <script src="jquery.parallax-scroll.min.js"></script>
     <script>
         $(function () {
+            $(function () {
+                $(window).resize(function () {
+                    $('.container').width($(window).width()).height($(window).height())
+                    $('.content').each(function () {
+                        $(this).css('margin-left', ($(this).width() / 2 * -1) + 'px')
+                            .css('margin-top', ($(this).height() / 2 * -1) + 'px')
+                    })
+                })
+
+                $('.bg-holder').parallaxScroll({
+                    friction: 0.3
+                })
+            })
+
             $('.icon img').hover(
                 function () {
                     $(this).attr('src', $(this).attr('src').replace('.png', '_over.png'))
