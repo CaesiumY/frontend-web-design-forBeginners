@@ -18,6 +18,33 @@ p {
   overflow: hidden;
   margin: 0;
 }
+#navi {
+  position: fixed;
+  width: 100vw;
+  z-index: 10000;
+  background: #e9592c;
+}
+#navi h1 {
+  float: left;
+  padding: 10px 0 0 15px;
+}
+.main-nav {
+  position: relative;
+  float: left;
+  height: 60px;
+  margin: 10px 0 0 50px;
+}
+.main-nav li {
+	list-style: none;
+	display: inline-block;
+	margin: 15px 30px;
+}
+.main-nav a {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	text-decoration: none;
+}
 #ms1 {
   background-image: url("images/bg01.jpg");
 }
