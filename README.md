@@ -1,2 +1,1 @@
-# frontend-web-design-forBeginners
-# frontend-web-design-forBeginners
+# 프런트엔드 웹 디자인 입문
