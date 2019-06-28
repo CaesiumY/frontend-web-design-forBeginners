@@ -1,16 +1,29 @@
-      @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url("https://fonts.googleapis.com/css?family=Lobster");
 
-			#container {
-				position:relative;
-				margin:250px auto;
-				width:80%;
-				height:auto;
-				padding:20px;
-				background:rgba(255,255,255,.4)							
-			}
-			h1{
-				font-family: 'Droid Sans', sans-serif;
-        font-size:5em;
-        font-weight:700;
-				text-shadow:2px 2px 5px white;
-			}
+#container {
+    position: relative;
+    margin: 250px auto;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+}
+h1 {
+    font-family: "Droid Sans", sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px white;
+}
+
+#videoBg {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	min-height: 100%;
+	z-index: -100;
+	background: url(../images/seagull.jpg) no-repeat;
+	background-size: cover;
+}
