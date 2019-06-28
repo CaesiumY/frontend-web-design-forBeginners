@@ -6,10 +6,10 @@
     width: 80%;
     height: auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.4);
+    /* background: rgba(255, 255, 255, 0.4); */
 }
 h1 {
-    font-family: "Droid Sans", sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 5em;
     font-weight: 700;
     text-shadow: 2px 2px 5px white;
@@ -26,4 +26,14 @@ h1 {
 	z-index: -100;
 	background: url(../images/seagull.jpg) no-repeat;
 	background-size: cover;
+}
+
+@media screen and (max-width:800px) {
+	body {
+		background: url(../images/seagull-m.jpg) no-repeat fixed center #000;
+		background-size: cover;
+	}
+	#videoBg {
+		display: none;
+	}
 }
