@@ -3,7 +3,7 @@
 ## [7-1] 뷰포트와 미디어 쿼리 알아보기
 
 ```
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
 1. `content="width=device-width`: 문서 너비를 현재 기기의 너비에 맞춥니다.
@@ -56,3 +56,63 @@
 익스플로러 6~8 버전을 위한 자바스크립트 라이브러리 다운.
 
 [다운 링크](https://github.com/scottjehl/Respond)
+
+<hr>
+
+## [7-2] 미디어 쿼리 사용하기
+
+### 1. 외부 CSS 파일로 정의하기
+
+#### `<link>` 태그 사용하기
+
+```
+<link rel="stylesheet" media="미디어 쿼리 조건" href="style.css">
+```
+
+```
+<link rel="stylesheet" media="screen and (max-width:768px)" href="style.css">
+```
+
+#### `@import` 구문 사용하기
+
+```
+@import url(css 파일경로) 미디어 쿼리 조건
+```
+```
+@import url("css/style.css") screen and (max-width:768px)
+```
+
+### 2. 웹 문서에서 직접 정의하기
+
+#### `<style>` 태그에서 조건 지정하기
+
+```
+<style media="미디어 쿼리 조건">
+    스타일 규칙들
+</style>
+```
+```
+<style media="screen and (max-width:320px)">
+    body {
+        ...
+    }
+</style>
+```
+
+#### `@media` 구문으로 조건 지정하기
+```
+<style>
+    @media 미디어 쿼리 조건 {
+        스타일 규칙들
+    }
+</style>
+```
+```
+<style>
+    @media screen and (max-width:320px) {
+        body {
+            ...
+        }
+    }
+</style>
+```
