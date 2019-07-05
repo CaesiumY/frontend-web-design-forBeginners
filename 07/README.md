@@ -116,3 +116,72 @@
     }
 </style>
 ```
+
+<hr>
+
+## [07-3] 가변 이미지
+
+### 기본 방법
+
+그냥 `width:100%` 로 지정하게 되면 화면 너빗값에 따라 이미지의 너비가 줄어들거나 늘어나게 되지만, 원래 크기 이상으로 늘어나면 화질이 깨짐.
+
+그래서 원래 이미지 이상으로 늘어나지 않도록 `max-width` 속성을 사용.
+
+`height:auto;` 를 사용해 너빗값에 따라 높이도 자동 조절되도록 설정.
+
+```
+img {
+    max-width:100%;
+    height: auto;
+}
+```
+
+### 문제점
+
+* 용량이 큰 이미지가 포함된 페이지를 모바일에서 볼 경우 -> **데이터 폭발**
+
+* 미디어 쿼리를 사용해 모바일에서는 작은 이미지를 다운하자!
+  * 브라우저에서 이미지를 Preload(미리 로딩)하기 때문에 결국 둘 다 다운받게 됨 -> **데이터 대폭발**
+
+* 게다가 모바일에서 옆으로 보면 이미지가 다르게 보인다... 전용 이미지가 또 필요.
+
+
+### `<img>` 태그의 `srcset` 속성
+
+이 속성은 기본으로 사용할 이미지 파일 경로를 지정하고, px **너비**나 **밀도**에 맞는 여러 이미지를 함께 지정.
+
+```
+<img src="이미지" srcset="파일1, 파일2, 파일3">
+```
+
+#### 픽셀 너비 서술자
+'파일 이름, 너비w'
+
+```
+<img src="sky.png" srcset="sky-large.png 1024w, sky-medium.png 640w, sky-small.png"> 
+```
+
+#### 픽셀 밀도 서술자
+```
+<img src="sky.png" srcset="sky-large.png 3x, sky-medium.png 2x, sky-small.png"> 
+```
+
+### <picture 태그>
+
+| 속성 | 설명 |
+|:-----:|:------:|
+|media| srcset에 지정한 이미지를 표시하기 위한 조건 |
+|sizes| 파일 크기 |
+|srcset| 이미지 파일 경로 |
+|type| 파일 유형 |
+
+#### 예시코드
+
+```
+<picture>
+    <source srcset="lime-1000.jpg" media="(min-width:1024px)">
+    <source srcset="lime-740.jpg" media="(min-width:768px)">
+    <source srcset="lime-300.jpg" media="(min-width:320px)">
+    <img src="lime.jpg" alt="lime" style="max-width:100%">
+</picture>
+```
