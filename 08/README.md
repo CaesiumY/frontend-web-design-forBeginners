@@ -1,0 +1,1 @@
+### [8. 원페이지 사이트와 패럴랙스 스크롤링](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/08)
