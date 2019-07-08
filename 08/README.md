@@ -114,3 +114,96 @@ id처럼 중복되면 안 됨.
 `data-menuanchor` 속성을 사용해 네비게이션 바의 선택된 항목 강조 표시 활성화
 
 [다른 속성 살펴보기](https://github.com/alvarotrigo/fullPage.js#options)
+
+<hr>
+
+## [8-2] 패럴랙스 스크롤링 효과 만들기
+
+패럴랙스란 화면을 스크롤할 때 애니메이션 효과를 주는 것. PC용 사이트에 적합.
+
+### 원리
+내용 레이어가 위로 움직일 때 배경 레이어를 반대 방향으로 움직이거나, 같은 방향으로 시간차를 두고 움직이는 것.
+
+### jQuery 소스를 추가해서 만들기
+
+배경 이미지가 삽입된 요소에 `data-type` 과 `data-speed` 속성을 추가.
+> `data-*` 속성은 웹 문서의 레이아웃이나 내용에는 영향을 주지 않으면서 특정한 속성을 지정하고 싶을 때 사용자가 원하는 이름으로 만들 수 있는 속성입니다.
+
+```
+<section data-type="background" data-speed="0.5">
+    <article><img src=""></article>
+</section>
+```
+
+jQuery를 연결한 다음,
+
+```
+<script>
+    $(document).ready(function() {  // 줄여서 $로 사용하기도 함
+        var wd = $(window)  // 윈도우 객체를 변수로 지정
+        $('section[data-type="background"]').each(function() {   //위의 data-type값
+            var bg = $(this)    // 현재 섹션 요소를 변수로 지정
+            $(window).scroll(function() {   // 스크롤 이벤트가 발생하면
+                var yPos = -(wd.scrollTop() / bg.data('speed')) // -(스크롤 얼마나)
+                var coords = '50%' + yPos + 'px'    // 좌표값 생성
+                bg.css({backgroundPosition:coords}) // css 속성 값을 바꿈
+            })
+        })
+    })
+</script>
+```
+~~(어렵다)~~
+
+### jQuery 플러그인을 이용한 패럴랙스 효과 만들기
+
+[jQuery 홈페이지](https://jquery.com/)
+
+#### Stellar.js 플러그인
+
+[링크](https://plugins.jquery.com/stellar/)
+
+사용법이 간단한 것이 장점.
+
+```
+$('#main').stellar()
+```
+
+#### ScrollMagic 플러그인
+
+[링크](http://scrollmagic.io/)
+
+
+#### parallax-scroll 플러그인
+
+[데모 링크](https://parallax-scroll.aenism.com/)
+
+배경이 적용되는 요소에 `bg-holder`라는 클래스를 추가하고, `data-width`, `data-height`를 통해 크기를 조절
+
+```
+<div class="bg-holder" data-width="1200" data-height="730"></div>
+```
+
+```
+<script>
+    $('.bg-holder').parallaxScroll({
+        friction: 0.3   // 효과 강도
+    })
+</script>
+```
+
+#### 섹션이 화면에 가득차게 만들기
+
+```
+<script>
+    $(function() {
+        $(window).resize(function() {
+            $('.container').width($(window).width()).height($(window).height())
+            $('.content').each(function() {
+                $(this).css('margin-left', ($(this).width()/2*-1)+'px').css('margin-top', ($(this).height()/2*-1)+'px')
+            })
+        })
+
+        setTimeout(function() {$(window).resize()}, 1000)
+    })
+</script>
+```
