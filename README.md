@@ -14,3 +14,7 @@
 ## <방문자의 눈길을 사로잡는 웹 요소>
 
 ### [11. 캐러셀](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/11)
+
+### [12. SVG](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/12)
+
+### [13. 웹 폰트](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/13)
