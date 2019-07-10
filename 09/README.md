@@ -19,3 +19,18 @@
 </style>
 ```
 
+## [09-2] jQuery 플러그인을 사용해 그리드 레이아웃 만들기
+
+### vGrid 플러그인
+
+[깃허브 링크](https://github.com/xlune/jQuery-vGrid-Plugin)
+
+```
+<script>
+    $('#container').vgrid({
+        time: 400,  // 애니메이션 실행 시간
+        delay: 30,  // 애니메이션 지연 시간
+        wait: 500   // 애니메이션 대기 시간
+    })
+</script>
+```
