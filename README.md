@@ -18,3 +18,9 @@
 ### [12. SVG](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/12)
 
 ### [13. 웹 폰트](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/13)
+
+## <내가 직접 만드는 최신 웹 사이트>
+
+### [14. 웹 사이트 분석해보기](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/14)
+
+### [15. 플렉스 박스로 웹 사이트 만들기](https://github.com/CaesiumY/frontend-web-design-forBeginners/tree/master/15)
