@@ -99,3 +99,74 @@ flex: 1 40px;   // 값이 두 개, 단위가 없는 건 grow, 있는 건 basis
 flex: 1 1;  // 값이 두개, 둘다 단위가 없다면 flex-grow, flex-shrink
 flex: 2 2 0;    // 값이 세 개면 순서대로 grow shrink basis
 ```
+
+## CSS 그리드 레이아웃 모듈
+
+### 플렉스 박스 레이아웃과 CSS 그리드 레이아웃의 차이점
+플렉스 박스 레이아웃에서는 아이템을 배치할 때 가로나 세로 중 하나를 주축으로 정해놓고 배치 = 1차원 <br>
+그리드 레이아웃에서는 배치할 때 가로와 세로를 모두 사용 = 2차원
+
+### 그리드 레이아웃 만들기
+플렉스 박스처럼 컨테이너를 만들고, 그 안에 아이템을 배치
+
+#### display
+```
+.wrapper {  // 컨테이너의 클래스명
+    display: grid;  // 또는 inline-grid
+}
+```
+
+#### grid-template-columns
+```
+grid-template-columns: 200px 200px 200px;   // 칼럼의 너비를 200px씩, 3개씩 배치
+```
+
+#### grid-template-rows
+```
+grid-template-rows: 100px 200px;    // 첫 번째 줄과 두 번째 줄의 높이를 지정
+```
+
+가끔 지정한 높이 보다 내용이 많을 경우에는 내용이 밖으로 넘쳐버림
+
+```
+grid-template-columns: minmax(100px auto)
+```
+이런 식으로 최소는 `100px`, 최대는 `auto` 로 설정
+
+#### fr 단위
+
+px을 사용하면 항상 크기가 고정되기 때문에 반응형에 적합하지 않음
+그래서 상대적인 크기를 지정하는 `fr` 단위를 사용
+
+```
+grid-template-columns: 1fr 1fr 1fr; // 같은 비율로 3칸 표시
+grid-template-columns: 2fr 1fr 2fr; // 2:1:2의 비율로 3칸 표시
+
+grid-template-columns: repeat(3, 1fr);  // 3개 반복
+```
+
+#### grid-column-gap, grid-row-gap, grid-gap
+- grid-column-gap:  칼럼 사이 간격
+- grid-row-gap:     줄 사이의 간격
+- grid-gap:         칼럼과 줄 둘 다
+
+```
+grid-column-gap: 30px;
+grid-row-gap: 20px;
+grid-gap: 20px 30px;
+```
+
+이 외에도 플렉스 박스의 align-content나 justify-content 같은 속성 사용 가능
+
+### 그리드 라인을 사용해 배치하기
+
+그리드 레이아웃에는 눈에 보이지 않는 **그리드 라인**이 존재
+
+[예시](https://github.com/CaesiumY/frontend-web-design-forBeginners/blob/master/09/css-grid/grid-4.html)
+
+```
+grid-column: 1/4;   // 칼럼 1번부터 4번까지
+grid-row: 2/4;      // 줄 2번부터 4번까지
+grid-column-start:3;    // 칼럼 3번부터 시작
+grid-row-start:2;   // 줄 2번부터 시작
+```
