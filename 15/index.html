@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coding School</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
 </head>
 <body>
 
@@ -24,7 +25,13 @@
   <!-- 헤더 -->  
   <section>
     <div class="wrapper">
-     
+     <div class="banner">
+       <div class="bxslider">
+         <div><img src="images/top-1.jpg" alt=""></div>
+         <div><img src="images/top-2.jpg" alt=""></div>
+         <div><img src="images/top-3.jpg" alt=""></div>
+       </div>
+     </div>
     </div>
   </section>
     
@@ -107,6 +114,7 @@
   </section>
 
   <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
   
   <script>
     $(function() {
@@ -117,6 +125,11 @@
         menu.slideToggle();
       });
     });
+
+    $('.bxslider').bxSlider({
+      auto: true,
+      autoHover: true
+    })
   </script>
 </body>
 </html>
