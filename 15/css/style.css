@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap&subset=korean');
 
 * {
   margin:0;
@@ -42,6 +43,10 @@ nav a#trigger {
 }
 
 @media screen and (min-width:764px) {
+  .wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
   nav {
     height: 80px;
     border-bottom:2px solid #34495e;
@@ -110,6 +115,8 @@ section:nth-child(odd) {
   padding:20px 50px;
 }
 .msg p {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
   color: #ff6600;
   font-size:1.4em;
   font-style: italic;
