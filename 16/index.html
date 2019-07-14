@@ -16,14 +16,38 @@
 
 <body>
     <div class="header">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a href="#" class="navbar-brand">LOGO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Freebies</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="container align-center">
             <h1><strong>Display your web design</strong><br>in a web browser</h1>
             <h4 class="silver hidden-xs">Fastest way to present your design and get feedback from your clients!</h4>
-            Upload Project
+            <div class="btn btn-primary btn-lg">Upload Project</div>
 
             <div class="silver small-info margin-top-big d-none d-md-block"></div>
-            <img src="images/drop-icon.png">
-            Drop here or select your project<br>prepared in the PNG or JPG format
+            <p>
+                <img src="images/drop-icon.png">
+                Drop here or select your project<br>prepared in the PNG or JPG format
+            </p>
         </div>
     </div>
 
@@ -115,7 +139,8 @@
                     </div>
                 </div>
                 <div class="col-md-4 align-center">
-                    <a href="#registerModal" role="button" data-toggle="modal">Sign Up <strong>now</strong></a>
+                    <a href="#registerModal" role="button" data-toggle="modal" class="btn btn-danger btn-lg">Sign Up
+                        <strong>now</strong></a>
                 </div>
                 <div class="col-md-2">
                     <div class="info-box align-center">
