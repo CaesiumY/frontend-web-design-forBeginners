@@ -88,3 +88,60 @@ $(function() {
     });
 </script>
 ```
+
+## [10-2] 풀 스크린 배경 동영상 직접 만들기
+
+### 사전 준비
+
+#### 서버의 MIME 유형 설정
+서버의 .htaccess 파일에서 지정
+```
+AddType video/webm .webm
+AddType video/mp4 .mp4
+AddType video/ogg .ogv
+```
+
+~~무슨 소리인지 모르겠;;~~
+
+#### html5shiv 파일 포함
+
+익스플로러 8 이하 버전에서는 html5 버전 인식 불가 <br>
+-> 최소한 [html5shiv.js 파일을 링크](https://github.com/aFarkas/html5shiv)
+
+```
+<!--[if it IE 9]>
+<script src="html5shiv.min.js"></script>
+<![endif]-->
+```
+
+### jQuery 플러그인을 사용해 풀 스크린 배경 만들기
+
+#### Vide.js 플러그인
+
+[홈페이지 링크](http://vodkabears.github.io/vide/)
+
+```
+//문서 전체의 경우
+<body data-vide-bg="비디오 링크, poster: 포스터 이미지 링크" data-vide-options="loop: true, muted: true">
+
+// 일부 요소의 경우
+$("요소").vide("비디오 링크", { 옵션들 });
+```
+
+### 유튜브 동영상으로 풀 스크린 배경 만들기 - tubular 플러그인
+
+[다운 링크](https://code.google.com/archive/p/jquery-tubular/)
+
+```
+<script>
+    $('document').ready(function() {
+        var options={
+            videoId: '유튜브 비디오 아이디',
+            start:8
+        };
+
+        $('요소').tubular(options);
+    })
+
+</script>
+```
