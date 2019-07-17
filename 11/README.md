@@ -49,3 +49,13 @@
     </div>
 </div>
 ```
+
+## [11-4] 그 밖의 캐러셀 플러그인
+
+### SlideJS 플러그인
+
+[링크](https://slidesjs.com/)
+
+### Camera slideshow 플러그인
+
+[링크](https://github.com/pixedelic/Camera)
