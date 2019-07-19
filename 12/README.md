@@ -36,3 +36,59 @@ d3.js 나 Raphael 같은 프레임워크는 데이터 시각화에 svg 이미지
 [SVG Optimizer 링크](https://petercollingridge.appspot.com/svg-optimiser)
 
 Node.js 기반이라면 [SVGO](https://github.com/svg/svgo)
+
+## [12-2] SVG 이미지 사용하기
+
+### SVG 파일을 삽입하는 방법
+
+#### `<img>` 태그 사용하기
+```html
+<img src="svg 파일" width="300" height="300">
+```
+
+#### 소스 그대로 넣기
+
+`<svg>` 태그를 그대로 복사하여 삽입.
+
+### SVG 파일을 지원하지 않는 하위 버전 대응하기
+
+#### Modernizr 스크립트 추가
+
+[Modernizr 링크](https://modernizr.com/)
+
+1. Add your detects 클릭
+2. SVG 선택
+3. 빌드
+4. 나온 js 파일을 연결
+
+```html
+<script>
+    if (Modernizr.svg) {
+        // 지원할 경우
+    } else {
+        // 지원하지 않을 경우
+    }
+</script>
+```
+
+### SVG 대신 PNG 파일 표시하기
+
+[소스 복붙이 필요.](https://coderwall.com/p/u_ngaa/fallback-svg-to-png-in-img-element)
+
+```js
+// Check if browser can handle SVG
+if(!Modernizr.svg){ // 지원 안 할 경우
+    // Get all img tag of the document and create variables
+    var i=document.getElementsByTagName("img"),j,y;
+
+    // For each img tag
+    for(j = i.length ; j-- ; ){
+        y = i[j].src
+        // If filenames ends with SVG
+        if( y.match(/svg$/) ){
+            // Replace "svg" by "png"
+            i[j].src = y.slice(0,-3) + 'png'
+        }
+    }
+}
+```
