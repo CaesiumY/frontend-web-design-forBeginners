@@ -43,3 +43,46 @@ px 단위가 항상 고정된 크기라면, em은 **상대 크기**로 표시하
 ```js
 $('요소').flowtype();
 ```
+
+
+## [13-2] CSS로 웹 폰트 사용하기
+
+### 웹 폰트 파일을 포함하는 간단한 방법
+
+```html
+<style>
+    @font-face {
+        font-family: Blackout, Arial Black;         //지원하지 않으면 Arial Black
+        src: url('Blackout.ttf') format('truetype');
+    }
+</style>
+```
+Blackout이라는 자신만의 폰트 이름을 정의
+
+### 다양한 폰트 파일 형식
+
+- TTF (True Type Font)
+- OTF (Open Type Font)
+- EOT (Embedded Open Type)
+- SVG (Scalable Vector Graphic)
+- WOFF (Web Open Font Format)
+
+예전 버전을 위해서는 TTF, 최신 버전은 WOFF 타입
+ttf는 용량이 크기 때문.
+
+```html
+<style>
+    @font-face {
+        font-family: Blackout, Arial Black;
+        src: 
+        local('Blackout'),
+        url('Blackout.eot'),
+        url('Blackout.woff') format('woff'),
+        url('Blackout.ttf') format('truetype');
+    }
+</style>
+```
+1. 로컬에서 찾아봄
+2. 익스플로러 8 이하 버전을 위한 설정
+3. woff를 지원하면 여기서 멈춤
+4. 마지막 수단
