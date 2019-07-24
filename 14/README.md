@@ -13,3 +13,25 @@
 
 [오픈소스 라이선스 가이드](https://www.olis.or.kr/license/licenseGuide.do)
 
+## [14-2] 웹 개발에 도움이 되는 확장 프로그램
+
+### 컬러질라
+
+[링크](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=ko)
+
+그냥 컬러 뽑아주는 스포이드 도구
+
+### 왓폰트
+
+[링크](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=ko)
+
+그냥(2) 폰트 뽑아주는 도구
+
+### CSS뷰어
+
+[링크](https://chrome.google.com/webstore/detail/cssviewer/ggfgijbpiheegefliciemofobhmofgce?hl=ko)
+
+그냥(3) css속성 뽑아주는 도구
+
+
+> 그냥 익숙해질겸 개발자 도구 사용하자.
