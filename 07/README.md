@@ -2,8 +2,8 @@
 
 ## [7-1] 뷰포트와 미디어 쿼리 알아보기
 
-```
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 1. `content="width=device-width`: 문서 너비를 현재 기기의 너비에 맞춥니다.
@@ -21,8 +21,8 @@
 
 ### 미디어 쿼리 구문
 
-```
-@media [only | not] 미디어 유형 [and 조건] * [and 조건]
+```css
+@media [only | not] 미디어 유형 [and 조건] * [and 조건];
 ```
 
 -   `media`: 스타일 시트 안에서 미디어 쿼리를 시작하는 속성.
