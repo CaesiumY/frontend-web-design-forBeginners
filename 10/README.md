@@ -16,16 +16,16 @@
 
 ### CSS3를 사용해 풀 스크린 배경 만들기
 
-```
+```css
 html {
-    background: url('이미지 경로') no-repeat center center fixed;
+    background: url("이미지 경로") no-repeat center center fixed;
     background-size: cover;
 }
 ```
 
 ### 기존 CSS를 사용해 풀 스크린 배경 만들기
 
-```
+```html
 <style>
     .bg {
         min-height: 100%;
@@ -36,15 +36,15 @@ html {
         top: 0;
         left: 0;
     }
-    @media screen and (max-width:1024px) {
+    @media screen and (max-width: 1024px) {
         .bg {
             left: 50%;
             margin-left: -512px;
         }
-    }    
+    }
 </style>
 
-<img src='이미지 경로' class="bg">
+<img src="이미지 경로" class="bg" />
 ```
 
 ### jQuery 플러그인을 사용해 풀 스크린 배경 만들기
@@ -53,12 +53,13 @@ html {
 
 [다운 링크](https://www.jquery-backstretch.com/)
 
-```
+```js
 $(function() {
     $.backstretch("이미지 파일");
 });
 ```
-```
+
+```js
 $(function() {
     $.backstretch(["이미지1", "이미지2", ...], {duration: 시간, fade: 시간});
 });
@@ -68,20 +69,21 @@ $(function() {
 
 [Vegas 링크](https://vegas.jaysalvat.com/)
 
-```
+```html
 <script>
     $(function() {
-        $('body').vegas({
-            slides:[
-                {src:'이미지 파일 1'},
-                {src:'이미지 파일 2'},
-                {src:'이미지 파일 3',
-                    video:{
-                        src:['비디오 파일'],
+        $("body").vegas({
+            slides: [
+                { src: "이미지 파일 1" },
+                { src: "이미지 파일 2" },
+                {
+                    src: "이미지 파일 3",
+                    video: {
+                        src: ["비디오 파일"],
                         loop: false,
                         mute: true
                     }
-                },
+                }
             ],
             delay: 3500
         });
@@ -94,7 +96,9 @@ $(function() {
 ### 사전 준비
 
 #### 서버의 MIME 유형 설정
+
 서버의 .htaccess 파일에서 지정
+
 ```
 AddType video/webm .webm
 AddType video/mp4 .mp4
@@ -108,9 +112,9 @@ AddType video/ogg .ogv
 익스플로러 8 이하 버전에서는 html5 버전 인식 불가 <br>
 -> 최소한 [html5shiv.js 파일을 링크](https://github.com/aFarkas/html5shiv)
 
-```
+```html
 <!--[if it IE 9]>
-<script src="html5shiv.min.js"></script>
+    <script src="html5shiv.min.js"></script>
 <![endif]-->
 ```
 
@@ -120,10 +124,15 @@ AddType video/ogg .ogv
 
 [홈페이지 링크](http://vodkabears.github.io/vide/)
 
-```
+```html
 //문서 전체의 경우
-<body data-vide-bg="비디오 링크, poster: 포스터 이미지 링크" data-vide-options="loop: true, muted: true">
+<body
+    data-vide-bg="비디오 링크, poster: 포스터 이미지 링크"
+    data-vide-options="loop: true, muted: true"
+></body>
+```
 
+```js
 // 일부 요소의 경우
 $("요소").vide("비디오 링크", { 옵션들 });
 ```
@@ -132,16 +141,15 @@ $("요소").vide("비디오 링크", { 옵션들 });
 
 [다운 링크](https://code.google.com/archive/p/jquery-tubular/)
 
-```
+```html
 <script>
-    $('document').ready(function() {
-        var options={
-            videoId: '유튜브 비디오 아이디',
-            start:8
+    $("document").ready(function() {
+        var options = {
+            videoId: "유튜브 비디오 아이디",
+            start: 8
         };
 
-        $('요소').tubular(options);
-    })
-
+        $("요소").tubular(options);
+    });
 </script>
 ```
