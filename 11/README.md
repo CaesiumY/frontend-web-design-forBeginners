@@ -10,12 +10,12 @@
 
 [bxslider 공식 사이트](https://bxslider.com/)
 
-```
+```html
 <script>
     $(function() {
-        $('요소명').bxSlider({
-            slideWidth: 600,    // 화면 너비 설정
-            captions: true      // img 태그의 title 속성을 캡션으로 추가
+        $("요소명").bxSlider({
+            slideWidth: 600, // 화면 너비 설정
+            captions: true // img 태그의 title 속성을 캡션으로 추가
         });
     });
 </script>
@@ -27,7 +27,7 @@
 
 > 무려 css 2개, js 4개(jquery 포함)를 연결해야한다.
 
-```
+```html
 <script>
     $(function() {
         $('요소 이름').owlCarousel({
